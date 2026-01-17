@@ -1,0 +1,79 @@
+.stack-section {
+    padding: var(--spacing-xl) 0;
+    min-height: 40vh;
+    overflow: hidden;
+    position: relative;
+    /* Add grid background to Stack section too */
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+}
+
+.section-header {
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+/* Marquee Container */
+.stack-marquee {
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    user-select: none;
+    width: 100%;
+}
+
+.marquee-content {
+    display: flex;
+    gap: 4rem;
+    animation: scroll 20s linear infinite;
+    padding: 2rem 0;
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(calc(-100% / 2));
+    }
+}
+
+.stack-item-minimal {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-box {
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.05);
+    /* Very subtle */
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid transparent;
+    /* Prepare for border color */
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.icon-box:hover {
+    transform: scale(1.1) translateY(-10px);
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Pause on Hover */
+.stack-marquee:hover .marquee-content {
+    animation-play-state: paused;
+}

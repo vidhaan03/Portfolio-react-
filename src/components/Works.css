@@ -1,0 +1,79 @@
+.works-section {
+    background-color: var(--color-bg);
+    /* Match main blue theme */
+    color: white;
+    padding: var(--spacing-xl) 0;
+    position: relative;
+    /* Consistent Grid Mask */
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
+}
+
+.works-title {
+    text-align: center;
+    margin-bottom: 4rem;
+    font-size: 3rem;
+}
+
+.text-outline {
+    -webkit-text-stroke: 1px white;
+    color: transparent;
+}
+
+.works-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 4rem;
+    /* Big black space in between */
+}
+
+.work-item {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    cursor: pointer;
+}
+
+.work-image-placeholder {
+    width: 100%;
+    aspect-ratio: 4/3;
+    border-radius: 40px;
+    /* Matching the rounded aesthetic */
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.4s ease;
+}
+
+.work-image-placeholder:hover {
+    transform: scale(1.02);
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.work-image-placeholder:hover .overlay {
+    opacity: 1;
+}
+
+.work-info h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.work-info p {
+    color: rgba(255, 255, 255, 0.6);
+    font-family: monospace;
+    text-transform: uppercase;
+}
