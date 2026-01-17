@@ -41,8 +41,8 @@ export const worksData = [
     },
     {
         id: 2,
-        title: 'Quantum Finance',
-        category: 'Fintech App',
+        title: 'This Webpage',
+        category: 'Portfolio Website',
         color: '#4ECDC4'
     },
     {
